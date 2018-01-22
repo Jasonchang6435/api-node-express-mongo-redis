@@ -1,7 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cars from './routes/car';
+import mongoose from 'mongoose';
 
+mongoose.connect('mongodb://localhost/cars');
 const app = express();
 
 app.use(bodyParser.json());
