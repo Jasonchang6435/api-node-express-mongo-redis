@@ -21,6 +21,10 @@ module.exports = function(app) {
                res.json({info: 'error during find car', error: err});
            }
            res.json({info: 'cars found successfully', data: cars});
+           // https://www.npmjs.com/package/blocked
+/*            setTimeout(() => {
+                res.json({info: 'cars found successfully', data: cars});
+            }, 1000);*/
         });
     });
 
@@ -30,7 +34,9 @@ module.exports = function(app) {
                res.json({info: 'error during find car', error: err});
            }
            if (car) {
-               res.json({info: 'car found successfully', data: car});
+               setTimeout(() => {
+                   res.json({info: 'cars found successfully', data: car});  // redis
+               }, 1000);
            } else {
                res.json({info: 'car not found'});
            }
