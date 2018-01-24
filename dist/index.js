@@ -12,19 +12,14 @@ var _transport_server = require('./transport_server');
 
 var _transport_server2 = _interopRequireDefault(_transport_server);
 
-var _mongoose = require('mongoose');
-
-var _mongoose2 = _interopRequireDefault(_mongoose);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// mongoose.connect('mongodb://localhost/cars');
 var app = (0, _express2.default)();
 
-/*app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));*/
+app.use(_bodyParser2.default.json());
+app.use(_bodyParser2.default.urlencoded({
+  extended: true
+}));
 
 (0, _transport_server2.default)(app);
 
