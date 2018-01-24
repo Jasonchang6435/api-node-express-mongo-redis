@@ -1,9 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import cars from './routes/car';
-import mongoose from 'mongoose';
+import transport_server from './transport_server';
 
-mongoose.connect('mongodb://localhost/cars');
 const app = express();
 
 app.use(bodyParser.json());
@@ -11,8 +9,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-cars(app);
+transport_server(app);
 
 app.listen(3000, () => {
-  console.log('server running on port 3000!');
+  console.log('transport server running on port 3000!');
 });

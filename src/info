@@ -1,0 +1,14 @@
+npm run build
+cd dist
+
+forever start car_server.js
+forever start flight_server.js
+nodemon index.js
+
+info:
+forever list => check running processes
+
+api:
+http://localhost:3001/flight
+http://localhost:3002/car
+http://localhost:3000/transport => proxy before firewall
