@@ -23,7 +23,7 @@ module.exports = function (app) {
                     }
 
                     if (!error && response.statusCode === 200) {
-                        calback(null, body);
+                        calback(null, body.data);
                     } else {
                         calback(response.statusCode);
                     }
@@ -37,7 +37,7 @@ module.exports = function (app) {
                     }
 
                     if (!error && response.statusCode === 200) {
-                        calback(null, body);
+                        calback(null, body.data);
                     } else {
                         calback(response.statusCode);
                     }
